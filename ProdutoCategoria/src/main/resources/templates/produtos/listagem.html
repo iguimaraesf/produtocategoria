@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Listagem de Produtos</title>
+</head>
+<body>
+	<h3>Lista de produtos</h3>
+	<table>
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Produto/Serviço</th>
+				<th>Preço</th>
+				<th>Vencimento</th>
+				<th>Categoria</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="p : ${produtos}">
+				<td th:text="${p.id}">1</td>
+				<td th:text="${p.nome}">Geladeira Brastemp Frost Free Evox - Inverse 540,6L Ative! BRO80 AK</td>
+				<td th:text="${p.valor}">R$ 4.409.91</td>
+				<td th:text="${p.validade}"></td>
+				<td th:text="${p.categoria.nome}">Eletrodomésticos</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>Conjunto Especial Kit Gourmet Ii Kt-70 Red 127v Mondial</td>
+				<td>R$ 143,10</td>
+				<td></td>
+				<td>Eletrodomésticos</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>Picanha Black Angus Grill beef</td>
+				<td>R$ 59.90</td>
+				<td>25/02/2020</td>
+				<td>Açougue</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>T-Bone de Cordeiro Uruguaio LA PARRILLA Congelado kg</td>
+				<td>R$ 28,99</td>
+				<td>01/04/2020</td>
+				<td>Açougue</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>Colocação De Porcelanato Em Geral</td>
+				<td>R$ 45,00</td>
+				<td></td>
+				<td>Serviços</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
