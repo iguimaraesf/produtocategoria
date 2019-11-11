@@ -15,6 +15,8 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 public class Produto {
 	@Id
@@ -31,6 +33,7 @@ public class Produto {
 	@ManyToOne
 	private Categoria categoria;
 	@Future
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private LocalDate validade;
 
 	public Produto() {

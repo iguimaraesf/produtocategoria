@@ -23,4 +23,5 @@ public class ProdutoController {
 		view.addObject("paginacao", pags.getPageable());
 		return view;
 	}
+
 }

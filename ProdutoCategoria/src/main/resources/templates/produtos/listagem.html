@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Listagem de Produtos</title>
@@ -16,12 +16,12 @@
 				<th>Categoria</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody th:remove="${#arrays.isEmpty(produtos)} ? all : all-but-first">
 			<tr th:each="p : ${produtos}">
 				<td th:text="${p.id}">1</td>
 				<td th:text="${p.nome}">Geladeira Brastemp Frost Free Evox - Inverse 540,6L Ative! BRO80 AK</td>
-				<td th:text="${p.valor}">R$ 4.409.91</td>
-				<td th:text="${p.validade}"></td>
+				<td th:text="'R$ ' + ${#numbers.formatDecimal(p.valor, 1, 'POINT', 2, 'COMMA')}">R$ 4.409,91</td>
+				<td th:text="*{{p.validade}}"></td>
 				<td th:text="${p.categoria.nome}">Eletrodomésticos</td>
 			</tr>
 			<tr>
@@ -34,7 +34,7 @@
 			<tr>
 				<td>3</td>
 				<td>Picanha Black Angus Grill beef</td>
-				<td>R$ 59.90</td>
+				<td>R$ 59,90</td>
 				<td>25/02/2020</td>
 				<td>Açougue</td>
 			</tr>

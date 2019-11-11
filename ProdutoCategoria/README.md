@@ -11,3 +11,8 @@ Os dados configurados para o acesso são:
 * servidor: localhost
 * conexão: jdbc:postgresql://localhost:5432/cadastroprd
 
+## Acesso via api REST
+* GET    http://localhost:8080/api/v1/admin/produtos - Lista os produtos
+* GET    http://localhost:8080/api/v1/admin/produtos?size=3&page=1 - Lista com dados de paginação
+* POST   http://localhost:8080/api/v1/admin/produtos - Grava um produto com o JSON no corpo da requisição
+* DELETE http://localhost:8080/api/v1/admin/produtos/4 - Exclui o produto com ID=4
